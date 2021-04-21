@@ -8,7 +8,8 @@ import processing.data.TableRow;
 
 public class UI extends PApplet
 {	
-	
+	Resistor res;
+
 	//ArrayList which holds the instances of Colour class
 	ArrayList<Colour> colours = new ArrayList<Colour>();
 
@@ -87,19 +88,20 @@ public class UI extends PApplet
 		separate(1);
 		separate(92);
 
-		loadColours();
-		printColours();
-		println("findColour: " + findColour(1));
-		//loadResistors();
+		
 	}
 
 	public void setup() 
 	{
+		loadColours();
+		printColours();
+		println("findColour: " + findColour(1));
+		loadResistors();
+		res = new Resistor(this, 618);
 	}
 	
 	public void draw() // consistenly loops 
 	{		
-		rect(200, 125, 100, 125);
-		line(125, );
+		res.render();
 	}
 }

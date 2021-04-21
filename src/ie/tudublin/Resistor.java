@@ -1,18 +1,23 @@
 package ie.tudublin;
 
-import processing.core.PApplet;
 import processing.data.TableRow;
 
-public class Resistor {
+public class Resistor extends UI {
 
     public int value;
     public int ones;
     public int tens;
     public int hundreds;
+    UI ui;
 
-    public Resistor(int value) {
+    public Resistor () {
+
+        
+    }
+
+    public Resistor(UI ui, int value) {
         this.value = value;
-
+        this.ui = ui; 
         hundreds = (value / 100);
         tens = (value - (hundreds * 100)) / 10;
         ones = value - ((hundreds * 100)  + (tens * 10));
@@ -21,15 +26,14 @@ public class Resistor {
 
     public Resistor(TableRow row) { 
 
-        this( 
-            
-            row.getInt("value")
-          
-        );
-
     }
 
-    
+    public void render() {
 
+        ui.fill(211, 211, 211);
+		ui.rect(200, 125, 100, 125);
+		ui.line(150, 190, 200, 190);
+
+    }
     
 }
