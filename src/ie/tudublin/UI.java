@@ -45,7 +45,7 @@ public class UI extends PApplet
 	
 		for (Colour c : colours) {
 
-			System.out.println(c);
+			println(c);
 
 		}
 		
@@ -55,13 +55,17 @@ public class UI extends PApplet
 
 		Colour col = new Colour();
 
-		if(col.value == value) {
+		for(Colour c : colours) {
 
-			return col;
+			if(c.value == value) {
+
+				col = c;
+
+			}
 
 		}
 		
-		return null;
+		return col;
 
 	}
 	
@@ -82,18 +86,19 @@ public class UI extends PApplet
 		separate(381);
 		separate(1);
 		separate(92);
+
+		loadColours();
+		printColours();
+		println("findColour: " + findColour(1));
+		//loadResistors();
 	}
 
 	public void setup() 
 	{
 	}
 	
-	public void draw()
+	public void draw() // consistenly loops 
 	{		
-
-		loadColours();
-		printColours();
-		//loadResistors();
 
 	}
 }

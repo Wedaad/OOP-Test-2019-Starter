@@ -8,7 +8,8 @@ public class Colour {
     public int r, g, b;
     public int value;
 
-    public Colour(TableRow row) {
+    //encapsulating row in csv file 
+    public Colour(TableRow row) { 
 
         this( 
             
