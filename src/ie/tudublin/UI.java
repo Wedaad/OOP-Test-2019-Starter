@@ -15,18 +15,18 @@ public class UI extends PApplet
 	//ArrayList which holds the instances of Resistor class
 	ArrayList<Resistor> resistor = new ArrayList<Resistor>();
 
-	// public void loadResistors() {
+	public void loadResistors() {
 
-	// 	Table t = loadTable("resistors.csv"); 
+		Table t = loadTable("resistors.csv"); 
 
-	// 	for(Table row : t.rows()) {
+		for(TableRow row : t.rows()) {
 
-	// 		Resistor res = new Resistor(row.getInt(0));
-	// 		resistor.add(res);
+			Resistor res = new Resistor(row);
+			resistor.add(res);
 
-	// 	}
+		}
 
-	// }
+	}
 
 	public void loadColours() { //populating arraylist
 
@@ -99,6 +99,7 @@ public class UI extends PApplet
 	
 	public void draw() // consistenly loops 
 	{		
-
+		rect(200, 125, 100, 125);
+		line(125, );
 	}
 }

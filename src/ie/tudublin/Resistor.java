@@ -1,6 +1,7 @@
 package ie.tudublin;
 
 import processing.core.PApplet;
+import processing.data.TableRow;
 
 public class Resistor {
 
@@ -11,12 +12,24 @@ public class Resistor {
 
     public Resistor(int value) {
         this.value = value;
-        this.ones = ones;
-        this.tens = tens;
-        this.hundreds = hundreds;
 
+        hundreds = (value / 100);
+        tens = (value - (hundreds * 100)) / 10;
+        ones = value - ((hundreds * 100)  + (tens * 10));
+    
+    }
+
+    public Resistor(TableRow row) { 
+
+        this( 
+            
+            row.getInt("value")
+          
+        );
 
     }
+
+    
 
     
 }
